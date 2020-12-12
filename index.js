@@ -19,7 +19,7 @@ app.get("/", (req, res, next) => {
 app.post("/generate-pdf", async (req, res, next) => {
   const htmlTemplate = template(req.body);
   try {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     const page = await browser.newPage();
 
     await page.emulateMediaType("screen");
