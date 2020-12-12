@@ -10,6 +10,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+const PORT = process.env.PORT || 5000;
+
 app.get("/", (req, res, next) => {
   res.send("PDF Generator for the CV application created by aayushmau5");
 });
@@ -41,4 +43,4 @@ app.get("/get-pdf", (req, res, next) => {
   res.sendFile(`${__dirname}/mypdf.pdf`);
 });
 
-app.listen(5000, () => console.log("Listening on port 5000"));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
