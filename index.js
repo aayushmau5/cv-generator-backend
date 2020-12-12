@@ -35,7 +35,8 @@ app.post("/generate-pdf", async (req, res, next) => {
 
     res.send(Promise.resolve());
   } catch (err) {
-    res.send(Promise.reject("Error Generating PDF"));
+    console.log(err);
+    res.send("Error Generating PDF");
   }
 });
 
