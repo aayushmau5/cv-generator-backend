@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 const PORT = process.env.PORT || 5000;
 
 app.get("/", (req, res, next) => {
-  res.send("PDF Generator for the CV application created by aayushmau5");
+  res.send("PDF Generator for the CV application created by @aayushmau5");
 });
 
 app.post("/generate-pdf", async (req, res, next) => {
